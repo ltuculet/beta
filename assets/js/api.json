@@ -1,0 +1,50 @@
+{
+    "type": "result",
+    "data": [
+        {
+            "title": "tropibox",
+            "song": "Sombras - Lucerito",
+            "track": {
+                "artist": "Sombras",
+                "title": "Lucerito",
+                "album": "La historia del grupo",
+                "royaltytrackid": 34097.0000,
+                "started": null,
+                "id": 34097,
+                "length": 0,
+                "playlist": {
+                    "id": 22,
+                    "title": "Rotaci\u00f3n standard"
+                },
+                "buyurl": "https:\/\/music.apple.com\/us\/album\/la-historia-del-grupo-sombras-18-temas-completos\/407704074?uo=4",
+                "imageurl": "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music\/v4\/39\/a5\/8a\/39a58a83-8a61-188d-4971-d5d2acdfe567\/885686414354.jpg\/100x100bb.jpg"
+            },
+            "bitrate": "128 Kbps",
+            "server": "Activo",
+            "autodj": "Activo",
+            "source": "Si",
+            "offline": false,
+            "summary": "<a href=\"https:\/\/radiostreamingserver.com.ar:2199\/tunein\/-stream\/tropibox.pls\">tropibox - Sombras - Lucerito<\/a>",
+            "listeners": 34,
+            "maxlisteners": 1000,
+            "reseller": 0,
+            "serverstate": true,
+            "sourcestate": true,
+            "sourceconn": true,
+            "date": "04 Oct, 2024",
+            "time": "22:20",
+            "rawmeta": "Sombras - Lucerito ",
+            "mountpoint": "\/stream",
+            "tuneinurl": "http:\/\/radiostreamingserver.com.ar:8015\/stream",
+            "tuneinurltls": "",
+            "directtuneinurl": "",
+            "proxytuneinurl": "",
+            "proxytuneinurltls": "",
+            "tuneinformat": "mp3",
+            "webplayer": "jplayer",
+            "servertype": "IceCast",
+            "listenertotal": 34,
+            "url": "https:\/\/radiostreamingserver.com.ar:2199\/rpc"
+        }
+    ]
+}

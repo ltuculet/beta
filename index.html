@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/boot/mdb.dark.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/fonts/mox/style.css">
+        <link rel="stylesheet" href="./assets/fonts/threads/">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="manifest" href="./manifest.json">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <title>Hypersonica</title>
+    </head>
+    <body>
+        <!--<div class="modal top fade" id="modalchat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="static" data-mdb-keyboard="false">
+            <div class="modal-dialog  ">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Chat en Vivo</h5>
+                  <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <main id="procesos"></main>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cerrarSesion" class="btn btn-primary d-none" onclick="cerrar();">
+                        Cerrar Sesión
+                    </button>
+                  <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                    Cerrar
+                  </button>
+
+                </div>
+              </div>
+            </div>
+          </div>-->
+        <center><button id="btnInstall" aria-label="Install" hidden style="display: none !important;"><i class="fa-solid fa-download"></i> Instalar</button></center>
+        <main class="container-fluid vh-100 position-relative">
+            <section class="position-absolute btn__floating">
+                <ul>
+                    <!--<li>
+                        <a href="#" data-mdb-toggle="modal" data-mdb-target="#modalchat">
+                            <i class="fa-solid fa-comments"></i>
+                        </a>
+                    </li>-->
+                    <li class="mt-2">
+                        <a href="https://wa.me/+5491134866838">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="animacion position-absolute w-100 vh-100" style="backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+                <img src="" id="fondo" width="100%">
+            </section>
+            <section class="lamina d-flex justify-content-center align-items-center position-absolute w-100 vh-100" style="backdrop-filter: none !important; -webkit-backdrop-filter: none !important;">
+                <div class="cnt__logo position-absolute">
+                    <img src="./assets/imgs/perfil.png">
+                    <span>Pasión por el Hi-Fi</span>
+                </div>
+                <div class="cnt__caratula">
+                    <img src="img/nocover.png" id="caratula">
+                </div>
+                <div class="lottie animate__animated animate__fadeIn" id="lottie">
+                    <lottie-player src="./assets/imgs/Q0lVKhfzgM.json"
+                        background="Transparent"
+                        speed="1"
+                        style="width: 150px;"
+                        direction="1" mode="normal" loop>
+                    </lottie-player>
+                </div>
+                <div class="cnt__player">
+                    <button id="player" class="btn__player">
+                        <i class="fa-solid fa-circle-play" id="icon-player"></i>
+                    </button>
+                </div>
+                <div class="cnt__tema" id="tema"></div>
+                <div id="stream-status" style="min-height: 20px;"></div>
+                <div class="redes">
+                    <ul>
+                        <!--<li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>-->
+                        <!--<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>-->
+                        <!--<li><a href="#"><i class="fa-brands fa-threads"></i></a></li>-->
+                        <!--<li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>-->
+                        <!--<li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>-->
+                        <!--<li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>-->
+                    </ul>
+                </div>
+                <div class="footer position-absolute d-flex justify-content-center align-items-center">
+                    <!--<i class="icon icon-copy" style="font-size: 36pt;"></i>-->
+                    <img src="./img/copy.png" width="75%">
+                </div>
+            </section>
+
+            <!-- iOS Installation Prompt Modal -->
+            <div id="iosInstallModal" class="modal fade" tabindex="-1" style="display: none; position: fixed; z-index: 1050; top: 0; left: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+                <div class="modal-dialog modal-dialog-centered" style="margin: 1.75rem auto;">
+                    <div class="modal-content" style="background-color: #333; color: #fff; border-radius: 0.3rem; border: 1px solid rgba(0,0,0,.2);">
+                        <div class="modal-header" style="padding: 1rem 1rem; border-bottom: 1px solid #444;">
+                            <h5 class="modal-title" style="margin-bottom: 0; line-height: 1.5; font-size: 1.25rem;">Instalar Aplicación</h5>
+                            <button type="button" class="btn-close" id="closeIosInstallModal" aria-label="Close" style="padding: 0.5rem 0.5rem; margin: -0.5rem -0.5rem -0.5rem auto; background: transparent url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e\") center/1em auto no-repeat; border: 0; border-radius: 0.25rem; opacity: .5;"></button>
+                        </div>
+                        <div class="modal-body" style="position: relative; flex: 1 1 auto; padding: 1rem;">
+                            <p>Para instalar esta aplicación en tu iPhone o iPad:</p>
+                            <ol style="padding-left: 1.2rem;">
+                                <li>Toca el botón <strong>Compartir</strong> <i class="fa-solid fa-arrow-up-from-square" style="display: inline-block; vertical-align: middle;"></i> (parece un cuadrado con una flecha hacia arriba) en la barra de herramientas del navegador.</li>
+                                <li>Desplázate hacia abajo y selecciona <strong>"Agregar a la pantalla de inicio"</strong> <i class="fa-solid fa-square-plus" style="display: inline-block; vertical-align: middle;"></i>.</li>
+                            </ol>
+                        </div>
+                        <div class="modal-footer" style="display: flex; flex-wrap: wrap; flex-shrink: 0; align-items: center; justify-content: flex-end; padding: 0.75rem; border-top: 1px solid #444;">
+                            <button type="button" id="understandIosInstallModal" class="btn btn-primary" style="color: #fff; background-color: #0d6efd; border-color: #0d6efd; padding: 0.375rem 0.75rem; font-size: 1rem; border-radius: 0.25rem;">Entendido</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+        <script src="./assets/boot/mdb.min.js"></script>
+        <script src="./assets/js/moment.js"></script>
+        <script src="./assets/js/main_player.js"></script>
+        <script src="./script.js"></script>
+        <script src="./install.js"></script>
+    </body>
+</html>
