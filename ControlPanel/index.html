@@ -13,12 +13,14 @@
         <div class="section">
             <h2>Logotipos</h2>
             <div class="form-group">
-                <label for="logo">Logo Principal (se redimensionará a los tamaños necesarios):</label>
+                <label for="logo">Logo Principal (para `assets/imgs/perfil.png`):</label>
                 <input type="file" id="logo" accept="image/png, image/jpeg">
+                <img id="logoPreview" src="#" alt="Previsualización del Logo" class="preview-image">
             </div>
             <div class="form-group">
-                <label for="favicon">Favicon (se redimensionará a los tamaños necesarios):</label>
-                <input type="file" id="favicon" accept="image/x-icon, image/png">
+                <label for="favicon">Icono Base (para generar los iconos de `img/*.png` y favicon):</label>
+                <input type="file" id="favicon" accept="image/png, image/jpeg, image/x-icon">
+                <img id="faviconPreview" src="#" alt="Previsualización del Icono Base" class="preview-image">
             </div>
         </div>
 
@@ -67,8 +69,31 @@
         </div>
 
         <div class="section">
-            <button id="btnPreview" disabled>Previsualizar Cambios (No implementado aún)</button>
+            <button id="btnPreview">Mostrar/Actualizar Previsualización de Datos</button>
             <button id="btnApplyChanges">Aplicar Cambios y Descargar ZIP</button>
+        </div>
+
+        <div class="section" id="previewContainer" style="display: none;">
+            <h2>Previsualización de Datos Ingresados</h2>
+            <div class="preview-item">
+                <strong>Logo Principal:</strong>
+                <img id="finalLogoPreview" src="#" alt="Logo" class="preview-image-display">
+                <p id="noLogoPreview" style="display: none;">No se ha cargado un nuevo logo principal. Se usará el existente en la PWA o quedará vacío si no existe.</p>
+            </div>
+            <div class="preview-item">
+                <strong>Icono Base para Favicons/Iconos PWA:</strong>
+                <img id="finalFaviconPreview" src="#" alt="Icono Base" class="preview-image-display">
+                 <p id="noFaviconPreview" style="display: none;">No se ha cargado un nuevo icono base. Se usarán los existentes en la PWA.</p>
+            </div>
+            <div class="preview-item" id="audioStreamPreview">
+                <strong>URL Stream de Audio:</strong> <span></span>
+            </div>
+            <div class="preview-item" id="socialLinksPreview">
+                <strong>Redes Sociales:</strong>
+                <ul>
+                    <!-- Las URLs se llenarán aquí por JS -->
+                </ul>
+            </div>
         </div>
 
         <div id="statusMessages"></div>

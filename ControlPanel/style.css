@@ -137,6 +137,65 @@ button:disabled {
     color: #c0392b;
 }
 
+.preview-image {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    display: none; /* Ocultas por defecto, se muestran con JS */
+}
+
+.preview-image-display {
+    max-width: 150px; /* Un poco más grande para la sección de previsualización final */
+    max-height: 100px;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #f9f9f9;
+}
+
+
+#previewContainer {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #e3e3e3;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#previewContainer h2 {
+    margin-top: 0;
+    color: #3498db;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+}
+
+.preview-item {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+.preview-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.preview-item strong {
+    color: #555;
+}
+
+.preview-item span, .preview-item ul {
+    margin-left: 10px;
+    word-break: break-all;
+}
+.preview-item ul {
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .container {
@@ -148,5 +207,9 @@ button:disabled {
     button {
         width: 100%;
         margin-bottom: 10px;
+        margin-right: 0;
+    }
+    .preview-image, .preview-image-display {
+        max-width: 80%;
     }
 }
