@@ -24,8 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const finalFaviconPreview = document.getElementById('finalFaviconPreview'); // Preview en la sección de resumen
     const noFaviconPreview = document.getElementById('noFaviconPreview');
     const audioStreamPreviewDiv = document.getElementById('audioStreamPreview').querySelector('span');
+    const apiUserPreviewDiv = document.getElementById('apiUserPreview').querySelector('span');
     const socialLinksPreviewUl = document.getElementById('socialLinksPreview').querySelector('ul');
     const btnPreview = document.getElementById('btnPreview');
+
+    // Input para el usuario de la API
+    const apiUserInput = document.getElementById('apiUser');
 
 
     // Tamaños de iconos definidos en manifest.json y encontrados en img/
@@ -381,12 +385,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // La apiUrl no se está personalizando por ahora. Si se quisiera, se haría similar.
-        // const apiUrlVal = document.getElementById('apiUrlInput').value.trim(); // Si existiera este campo
-        // if (apiUrlVal) {
-        //     const apiUrlRegex = /(apiUrl\s*:\s*["'])([^"']*)(["'])/;
-        //     newContent = newContent.replace(apiUrlRegex, `$1${apiUrlVal}$3`);
-        // }
+        const apiUser = apiUserInput.value.trim();
+        if (apiUser) {
+            // Reemplazar 'hypersonica' en la apiUrl: "https://radiostreamingserver.com.ar:2199/rpc/hypersonica/streaminfo.get"
+            const apiUrlRegex = /(apiUrl\s*:\s*["']https:\/\/radiostreamingserver\.com\.ar:2199\/rpc\/)(hypersonica)(\/streaminfo\.get["'])/;
+            if (newContent.match(apiUrlRegex)) {
+                newContent = newContent.replace(apiUrlRegex, `$1${apiUser}$3`);
+                logMessage(`Usuario API en main_player.js actualizado a: ${apiUser}`);
+            } else {
+                logMessage('No se encontró el patrón de apiUrl específico para reemplazar el usuario "hypersonica".', 'warning');
+            }
+        }
 
         // Las redes sociales se manejan en index.html, no en este archivo.
         // El script.js de la raíz tampoco maneja estas URLs.
@@ -483,6 +492,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Audio Stream URL
         audioStreamPreviewDiv.textContent = audioStreamUrlInput.value.trim() || 'No establecida';
 
+        // API User
+        apiUserPreviewDiv.textContent = apiUserInput.value.trim() || 'No establecido (se usará el valor por defecto "hypersonica")';
+
         // Social Media Links
         socialLinksPreviewUl.innerHTML = ''; // Limpiar lista anterior
         const socialInputs = [
@@ -520,7 +532,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listeners para actualizar previsualizaciones de datos de texto dinámicamente
     const textInputsForPreview = [
-        audioStreamUrlInput, facebookUrlInput, twitterUrlInput, instagramUrlInput,
+        audioStreamUrlInput, apiUserInput, // Añadido apiUserInput
+        facebookUrlInput, twitterUrlInput, instagramUrlInput,
         youtubeUrlInput, tiktokUrlInput, emailInput, phoneInput, whatsappInput
     ];
     textInputsForPreview.forEach(input => {
