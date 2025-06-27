@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control PWA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Personalizador de PWA</h1>
+
+        <div class="section">
+            <h2>Logotipos</h2>
+            <div class="form-group">
+                <label for="logo">Logo Principal (se redimensionará a los tamaños necesarios):</label>
+                <input type="file" id="logo" accept="image/png, image/jpeg">
+            </div>
+            <div class="form-group">
+                <label for="favicon">Favicon (se redimensionará a los tamaños necesarios):</label>
+                <input type="file" id="favicon" accept="image/x-icon, image/png">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Stream de Audio</h2>
+            <div class="form-group">
+                <label for="audioStreamUrl">URL del Stream de Audio:</label>
+                <input type="text" id="audioStreamUrl" placeholder="https://servidor.com/stream">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Redes Sociales (dejar vacío para no incluir)</h2>
+            <div class="form-group">
+                <label for="facebookUrl">Facebook URL:</label>
+                <input type="url" id="facebookUrl" placeholder="https://facebook.com/usuario">
+            </div>
+            <div class="form-group">
+                <label for="twitterUrl">Twitter URL:</label>
+                <input type="url" id="twitterUrl" placeholder="https://twitter.com/usuario">
+            </div>
+            <div class="form-group">
+                <label for="instagramUrl">Instagram URL:</label>
+                <input type="url" id="instagramUrl" placeholder="https://instagram.com/usuario">
+            </div>
+            <div class="form-group">
+                <label for="youtubeUrl">YouTube URL:</label>
+                <input type="url" id="youtubeUrl" placeholder="https://youtube.com/canal">
+            </div>
+            <div class="form-group">
+                <label for="tiktokUrl">TikTok URL:</label>
+                <input type="url" id="tiktokUrl" placeholder="https://tiktok.com/@usuario">
+            </div>
+            <div class="form-group">
+                <label for="email">Email de Contacto:</label>
+                <input type="email" id="email" placeholder="contacto@ejemplo.com">
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono de Contacto (con código de país):</label>
+                <input type="tel" id="phone" placeholder="+1234567890">
+            </div>
+            <div class="form-group">
+                <label for="whatsapp">WhatsApp (con código de país, sin '+', ej: 521XXXXXXXXXX):</label>
+                <input type="text" id="whatsapp" placeholder="521XXXXXXXXXX">
+            </div>
+        </div>
+
+        <div class="section">
+            <button id="btnPreview" disabled>Previsualizar Cambios (No implementado aún)</button>
+            <button id="btnApplyChanges">Aplicar Cambios y Descargar ZIP</button>
+        </div>
+
+        <div id="statusMessages"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

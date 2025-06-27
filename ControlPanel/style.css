@@ -1,0 +1,152 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #3498db;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.section {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="file"] {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+#btnApplyChanges {
+    background-color: #2ecc71; /* Green */
+}
+
+#btnApplyChanges:hover {
+    background-color: #27ae60;
+}
+
+#statusMessages {
+    margin-top: 25px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #ecf0f1;
+    border: 1px solid #dadedf;
+}
+
+#statusMessages p {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 3px;
+}
+
+#statusMessages .info {
+    background-color: #eaf5ff;
+    border-left: 3px solid #3498db;
+    color: #2980b9;
+}
+
+#statusMessages .success {
+    background-color: #e6ffed;
+    border-left: 3px solid #2ecc71;
+    color: #27ae60;
+}
+
+#statusMessages .warning {
+    background-color: #fff9e6;
+    border-left: 3px solid #f39c12;
+    color: #d68910;
+}
+
+#statusMessages .error {
+    background-color: #ffe6e6;
+    border-left: 3px solid #e74c3c;
+    color: #c0392b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
